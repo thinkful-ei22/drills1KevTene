@@ -4,7 +4,8 @@ function yearOfBirth (age) {
   if (age <0 ) {  
     throw new Error('Age can not be negative');
   }
-  else if (typeof age != number){
+  else if ( typeof age !== 'number') {
+    throw new Error('Invalid Input!');
 
   }
   else{
@@ -19,7 +20,11 @@ function yearOfBirth (age) {
 //}
 
 function whoAmI (name, age){
+
+  if ( typeof age !== 'number' || typeof name !== 'string') {
+    throw new Error('Invalid Input!');
+  }
   console.log(`Hi, my name is ${name} and I'm ${age} years old`);
   console.log(`I was born in ${yearOfBirth(age)}`);
 }
-whoAmI('Chris', 25);
+whoAmI(25, 25);
